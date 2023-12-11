@@ -1,0 +1,31 @@
+<button (click)="getAlbums()">Get Albums</button>
+<button (click)="getAlbumsObservable()">Get Albums Observable</button>
+<button (click)="logAlbums()">Log Albums</button>
+<button (click)="addAlbum()">Add Album</button>
+<button (click)="editAlbum()">Edit Album</button>
+<button (click)="deleteAlbum()">Delete Album</button>
+
+<section>
+  <h1>{{ numberOfAlbums() }}</h1>
+  @defer (on hover) {
+  <p>Tienes {{ numberOfAlbums() }} albumes</p>
+  } @placeholder {
+  <p>Pasa el raton por encima</p>
+  }
+</section>
+
+<section>
+  @for( album of albums(); track album.id){
+  <div>
+    <h3>{{ album.title }}</h3>
+  </div>
+  }
+</section>
+
+<section>
+  @for( album of albumsData; track album.id){
+  <div>
+    <h3>{{ album.title }}</h3>
+  </div>
+  }
+</section>
