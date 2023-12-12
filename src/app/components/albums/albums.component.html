@@ -29,3 +29,14 @@
   </div>
   }
 </section>
+
+<section>
+  @defer (when albums$ | async) { @for( album of albums$ | async; track
+  album.id){
+  <div>
+    <h3>{{ album.title }}</h3>
+  </div>
+  } } @loading {
+  <p>Loading ...</p>
+  }
+</section>

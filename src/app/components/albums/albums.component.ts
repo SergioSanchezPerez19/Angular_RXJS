@@ -36,7 +36,7 @@ export class AlbumsComponent implements OnInit {
   private _spinnerService: SpinnerService = inject(SpinnerService);
 
   // RXJS operators
-  private albums$ = this._albumsService.getAlbums();
+  public albums$ = this._albumsService.getAlbums();
   public albumsData: Albums[] = [];
 
   //WritableSignals
